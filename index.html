@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOR srl</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="main-title">STOR srl</h1>
+        <img src="immagini/logo2.jpg" alt="Logo Azienda" class="logo">
+        <p>Specialisti in ristrutturazioni, idraulica ed elettricità</p>
+    </header>
+
+    <section id="about">
+        <h2>Chi siamo</h2>
+        <div class="about-box">
+            <p>Siamo un'azienda che si occupa della ristrutturazione completa di appartamenti, gestendo ogni aspetto, dagli impianti idraulici ed elettrici ai lavori di muratura. Garantiamo interventi rapidi, sicuri e di alta qualità, grazie ad anni di esperienza nel settore.</p>
+            <p>Offriamo sopralluoghi gratuiti e senza impegno per valutare il progetto insieme a voi e fornirvi un preventivo chiaro e su misura.</p>
+            <p>Affidatevi a noi per trasformare la vostra casa con professionalità e attenzione ai dettagli!</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Alcuni dei nostri lavori</h2>
+        <div class="carousel">
+          <div class="carousel-images">
+            <img src="immagini/bagno1.jpeg" class="active">
+            <img src="immagini/bagno2.jpeg">
+            <img src="immagini/cucina1.jpeg">
+            <img src="immagini/cucina2.jpeg">
+            <img src="immagini/sala1.jpeg">
+            <img src="immagini/soppalco1.jpeg">
+            <img src="immagini/soppalco2.jpeg">
+        </div>
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <button class="next" onclick="nextImage()">&#10095;</button>
+       </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contatti</h2>
+        <p>Telefono: <strong>+39 333 892 7392</strong></p>
+        <p>Email: <strong>storsrl27@gmail.com</strong></p>
+        <p>Indirizzo: <strong>Via Privata Carlo Antonio Carlone,8 - Milano</strong></p>
+        
+        <h3 class="location-title">Dove ci trovi</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d699.5939804223399!2d9.13333692855508!3d45.462230738807776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c3fd9589f629%3A0x4910c71b0104c8e1!2sSTOR%20s.r.l.!5e0!3m2!1sit!2sit!4v1741689297486!5m2!1sit!2sit" 
+            width="80%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </section>
+
+    <section id="form">
+        <h2>Richiedi un preventivo</h2>
+        <form id="contact-form" action="https://formsubmit.co/storsrl27@gmail.com" method="POST">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="address">Indirizzo (facoltativo):</label>
+    <input type="text" id="address" name="address">
+    
+    <label for="phone">Telefono:</label>
+    <input type="tel" id="phone" name="phone">
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    
+    <label for="message">Messaggio:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <p id="form-message" style="display:none; font-weight: bold;"></p>
+
+    <input type="hidden" name="_captcha" value="false"> 
+    <input type="hidden" name="_next" value="https://tuosito.com/grazie.html"> 
+    
+    <button type="submit">Invia</button>
+</form>
+    </section>
+</body>
+</html>

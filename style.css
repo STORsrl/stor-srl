@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f8f1e4;
+}
+
+header {
+    background-color: #d4b996;
+    color: white;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Dimensioni del logo */
+.logo {
+    width: 250px; /* Ridotto leggermente */
+    display: block;
+    margin: 10px auto;
+}
+
+/* Riquadro "Chi siamo" */
+.about-box {
+    background-color: #d4b996;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Carosello */
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.carousel-images img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-images img.active {
+    opacity: 1;
+}
+
+/* Pulsanti avanti/indietro */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Stile del form */
+form {
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #d4b996;
+    border-radius: 10px;
+    background-color: white;
+}
+
+input, textarea {
+    width: calc(100% - 20px);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+button {
+    background-color: #d4b996;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Ingrandire "Dove ci trovi" */
+h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .about-box {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    .carousel-images {
+        height: 300px;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
