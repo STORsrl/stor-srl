@@ -24,24 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
     prevBtn.addEventListener("click", prevImage);
     setInterval(nextImage, 6000);
 
-    // Form submission
+    // Form submission con AJAX
     const form = document.getElementById("contact-form");
     const messageBox = document.getElementById("form-message");
 
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Impedisce il refresh della pagina
 
-        fetch(form.action, {
-            method: form.method,
-            body: new FormData(form),
-        }).then(response => {
-            if (response.ok) {
+        const formData = new FormData(form);
+
+        fetch("https://formsubmit.co/ajax/storsrl27@gmail.com", {
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
                 messageBox.textContent = "Richiesta inviata con successo!";
+                messageBox.style.color = "green";
                 messageBox.style.display = "block";
                 form.reset(); // Svuota i campi del form
             } else {
-                alert("Errore nell'invio del form, riprova.");
+                messageBox.textContent = "Errore nell'invio del form. Riprova.";
+                messageBox.style.color = "red";
+                messageBox.style.display = "block";
             }
-        }).catch(error => console.error("Errore:", error));
+        })
+        .catch(error => {
+            messageBox.textContent = "Errore di connessione.";
+            messageBox.style.color = "red";
+            messageBox.style.display = "block";
+        });
     });
 });
